@@ -19,75 +19,171 @@ const topicPictures = [
 
 const learningItems = [
   {
-    title: "Welkom by Ewann se app",
+    title: "Kwartaal 1: nuwe woorde",
     picture: 0,
     groups: [
-      { label: "Hoe om te leer", lines: ["Lees een klein deel op 'n slag.", "Se die belangrikste punt hardop.", "Merk dit klaar wanneer jy dit ken."] },
-      { label: "Wanneer nuwe werk kom", lines: ["Mamma stuur die opsomming.", "Die app kry nuwe kaartjies en vrae.", "Jy oefen weer op die iPad."] }
+      { label: "Leer hierdie woorde", lines: ["onderhoud", "ondersoek", "geskiedenis", "vuurtoring", "promenade"] },
+      { label: "Leer ook hierdie woorde", lines: ["storms", "seine", "kus", "skipbreuk ly", "gemeenskap"] },
+      { label: "Slim leerwenk", lines: ["Lees elke woord hardop.", "Se wat jy dink dit beteken.", "Kyk dan in die woordelys."] }
     ]
   },
   {
-    title: "Slim opsomming-metode",
-    picture: 2,
+    title: "Nelson Mandela: lesse uit stories",
+    picture: 1,
     groups: [
-      { label: "Stap 1", lines: ["Kyk eers na die opskrif.", "Vra: waaroor gaan hierdie stuk?"] },
-      { label: "Stap 2", lines: ["Lees die kort punte.", "Kies drie woorde wat jy moet onthou."] },
-      { label: "Stap 3", lines: ["Maak die boek toe.", "Vertel die stuk in jou eie woorde."] }
+      { label: "Les by Xhosa-leier", lines: ["Luister eers na elke persoon.", "Praat eers wanneer jy klaar geluister het.", "'n Goeie leier bly soms in die agtergrond."] },
+      { label: "Les by Pa", lines: ["Staan vas vir wat regverdig is.", "Staan vas vir wat reg is."] },
+      { label: "Les by Ma en die donkie", lines: ["Gee vir ander om.", "Moenie jou deur jou vyand dom laat lyk nie."] }
     ]
   },
   {
-    title: "Toets jouself",
+    title: "Nelson Mandela: kinderjare",
+    picture: 0,
+    groups: [
+      { label: "Geboorte", lines: ["Hy is op 18 Julie 1918 in Mvezo in die Oos-Kaap gebore.", "Sy pa het hom die naam Rolihlahla gegee.", "Rolihlahla beteken 'moeilikheidmaker'."] },
+      { label: "Grootword", lines: ["Hy het in 'n klein dorpie grootgeword.", "Hy het die familie se skape en bokke opgepas."] },
+      { label: "Werk en studie", lines: ["Hy het gestudeer om 'n prokureur te word.", "Hy het later 'n leier van die ANC geword."] }
+    ]
+  },
+  {
+    title: "Mandela veg teen apartheid",
     picture: 3,
     groups: [
-      { label: "Flitskaarte", lines: ["Lees die vraag.", "Antwoord voor jy omdraai.", "Probeer weer as jy huiwer."] },
-      { label: "Vasvra", lines: ["Kies die beste antwoord.", "Lees die terugvoer.", "Begin weer tot dit maklik voel."] }
+      { label: "Apartheid", lines: ["Apartheid was nie regverdig nie.", "Die regering het Suid-Afrikaners in groepe verdeel.", "Swart en wit mense kon nie oral saam wees nie."] },
+      { label: "Protes", lines: ["Mandela en sy vriende wou Suid-Afrika verander.", "Hulle het protesoptogte deur die strate gelei.", "Mandela het gestaan vir wat hy geglo het."] },
+      { label: "Politieke gevangene", lines: ["Mense wat tronk toe gestuur word vir waarin hulle glo, word politieke gevangenes genoem.", "Mandela is na Robbeneiland gestuur."] }
+    ]
+  },
+  {
+    title: "Vryheid en presidentskap",
+    picture: 1,
+    groups: [
+      { label: "1990", lines: ["Op 11 Februarie 1990 kondig President FW de Klerk aan dat Mandela vrygelaat word.", "Mandela kom na 27 jaar uit die tronk."] },
+      { label: "1994", lines: ["Apartheid is in 1994 beeindig.", "Elke Suid-Afrikaner ouer as 18 jaar kon vir 'n nuwe regering stem.", "Op 8 Mei 1994 neem Mandela presidentskap oor by FW de Klerk."] },
+      { label: "Onthou", lines: ["Mandela het die land se eerste swart president geword.", "Hy is op 5 Desember 2013 oorlede."] }
+    ]
+  },
+  {
+    title: "Die Vryheidsmanifes",
+    picture: 2,
+    groups: [
+      { label: "Belangrike idee", lines: ["Suid-Afrika behoort aan almal wat daarin woon.", "Dit sluit swart en wit mense in."] },
+      { label: "Hoekom dit saak maak", lines: ["Mandela het geglo in wat reg is.", "Hy het geglo mense moet regverdig behandel word.", "Hy wou 'n beter Suid-Afrika he."] }
     ]
   }
 ];
 
 const flashcards = [
-  ["Wat moet Ewann eerste doen met 'n nuwe opsomming?", "Lees een klein deel op 'n slag."],
-  ["Hoekom se ons die antwoord hardop?", "Dit help jou brein om die werk beter te onthou."],
-  ["Wat doen jy as jy 'n vraag verkeerd kry?", "Lees die stuk weer en probeer weer."],
-  ["Wat beteken 'opsomming'?", "'n Kort weergawe van die belangrikste idees."]
+  ["Wat beteken onderhoud?", "'n Gesprek waar iemand vrae vra om inligting te kry."],
+  ["Wat beteken ondersoek?", "Om iets mooi na te gaan om meer daaroor uit te vind."],
+  ["Wat is geskiedenis?", "Die studie van dinge wat in die verlede gebeur het."],
+  ["Wat is 'n vuurtoring?", "'n Hoe toring met 'n lig wat skepe naby die kus waarsku."],
+  ["Wat is 'n promenade?", "'n Pad of stapplek langs die see."],
+  ["Wanneer is Nelson Mandela gebore?", "18 Julie 1918."],
+  ["Waar is Mandela gebore?", "In Mvezo in die Oos-Kaap."],
+  ["Wat beteken Rolihlahla?", "Moeilikheidmaker."],
+  ["Waarteen het Mandela geveg?", "Teen apartheid."],
+  ["Wat is 'n politieke gevangene?", "Iemand wat tronk toe gestuur word vir dit waarin hy of sy glo."],
+  ["Hoe lank was Mandela in die tronk?", "27 jaar."],
+  ["Waar was Mandela in die tronk?", "Op Robbeneiland."],
+  ["Wanneer is apartheid beeindig?", "In 1994."],
+  ["Wat was Mandela se groot presidentskap-feit?", "Hy was Suid-Afrika se eerste swart president."],
+  ["Wanneer is Mandela oorlede?", "5 Desember 2013."]
 ];
 
 const quiz = [
   {
-    question: "Wat is die beste manier om met 'n nuwe opsomming te begin?",
-    options: ["Lees alles vinnig en los dit", "Lees een klein deel op 'n slag", "Net kyk na die prentjies", "Slaan die moeilike woorde oor"],
-    answer: 1,
-    fact: "Klein dele is makliker om te onthou."
-  },
-  {
-    question: "Wat moet jy doen voordat jy 'Wys antwoord' druk?",
-    options: ["Raai sommer", "Dink eers self aan die antwoord", "Maak die app toe", "Vra dadelik vir hulp"],
-    answer: 1,
-    fact: "As jy eers self probeer, leer jy sterker."
-  },
-  {
-    question: "Waarvoor is die woordelys?",
-    options: ["Om belangrike woorde te oefen", "Om speletjies weg te steek", "Om die iPad af te sit", "Om punte uit te vee"],
+    question: "Wat beteken geskiedenis?",
+    options: ["Die studie van die verlede", "Om by die see te stap", "Iemand wat tronk toe gaan", "Slegte weer by die see"],
     answer: 0,
-    fact: "Die woordelys hou moeilike of belangrike woorde bymekaar."
+    fact: "Geskiedenis help ons leer wat vroeer gebeur het."
+  },
+  {
+    question: "Wat is 'n vuurtoring?",
+    options: ["'n Toring met 'n lig wat skepe waarsku", "'n Groot winkel", "'n Politieke party", "'n Treinwa"],
+    answer: 0,
+    fact: "'n Vuurtoring gebruik lig as 'n sein naby die kus."
+  },
+  {
+    question: "Wanneer is Nelson Mandela gebore?",
+    options: ["18 Julie 1918", "11 Februarie 1990", "27 April 1994", "5 Desember 2013"],
+    answer: 0,
+    fact: "Mandela is op 18 Julie 1918 in Mvezo gebore."
+  },
+  {
+    question: "Wat beteken Rolihlahla?",
+    options: ["Moeilikheidmaker", "Goeie leier", "Vuurtoring", "Vryheidsmanifes"],
+    answer: 0,
+    fact: "Mandela se pa het hom die naam Rolihlahla gegee."
+  },
+  {
+    question: "Waarteen het Mandela geveg?",
+    options: ["Apartheid", "Promenades", "Seine", "Storms"],
+    answer: 0,
+    fact: "Mandela het teen apartheid geveg omdat dit nie regverdig was nie."
+  },
+  {
+    question: "Wat is 'n politieke gevangene?",
+    options: ["Iemand wat tronk toe gestuur word vir waarin hy glo", "Iemand wat skepe bestuur", "Iemand wat 'n onderhoud doen", "Iemand wat by die see stap"],
+    answer: 0,
+    fact: "Mandela was 'n politieke gevangene."
+  },
+  {
+    question: "Hoe lank was Mandela in die tronk?",
+    options: ["27 jaar", "18 jaar", "5 jaar", "1 jaar"],
+    answer: 0,
+    fact: "Hy is na 27 jaar uit die tronk vrygelaat."
+  },
+  {
+    question: "Waar was die tronk waarna Mandela gestuur is?",
+    options: ["Robbeneiland", "Mvezo", "Die promenade", "Die Oos-Kaap se kus"],
+    answer: 0,
+    fact: "Mandela is na Robbeneiland gestuur."
+  },
+  {
+    question: "Wanneer is apartheid beeindig?",
+    options: ["1994", "1918", "1990", "2013"],
+    answer: 0,
+    fact: "In 1994 kon Suid-Afrikaners ouer as 18 vir 'n nuwe regering stem."
+  },
+  {
+    question: "Wat was Mandela se presidentskap-feit?",
+    options: ["Hy was Suid-Afrika se eerste swart president", "Hy was 'n vuurtoringwagter", "Hy het nooit gestudeer nie", "Hy was net 'n kind in 1994"],
+    answer: 0,
+    fact: "Mandela het in 1994 president geword."
   }
 ];
 
 const timeline = [
-  ["1", "Lees die opskrif en kyk waaroor die werk gaan."],
-  ["2", "Lees die kort punte rustig deur."],
-  ["3", "Se die belangrikste idees hardop."],
-  ["4", "Doen flitskaarte en die vasvra."],
-  ["5", "Herhaal later weer vir vaslegging."]
+  ["18 Julie 1918", "Nelson Mandela word in Mvezo in die Oos-Kaap gebore."],
+  ["Kinderjare", "Hy word Rolihlahla genoem en pas skape en bokke op."],
+  ["Later", "Hy studeer om 'n prokureur te word en word 'n leier van die ANC."],
+  ["Apartheidtyd", "Mandela en sy vriende lei protesoptogte teen onregverdige wette."],
+  ["Robbeneiland", "Mandela word tronk toe gestuur as 'n politieke gevangene."],
+  ["11 Februarie 1990", "President FW de Klerk kondig aan dat Mandela vrygelaat word."],
+  ["27 April 1994", "Suid-Afrikaners stem vir 'n nuwe regering."],
+  ["8 Mei 1994", "Mandela neem presidentskap oor by President FW de Klerk."],
+  ["5 Desember 2013", "Nelson Mandela sterf."]
 ];
 
 const words = [
-  ["opsomming", "'n Kort weergawe van die belangrikste idees."],
-  ["leerpad", "Die plek waar die werk in klein dele opgebreek is."],
-  ["flitskaart", "'n Vraagkaart wat jy kan omdraai om die antwoord te sien."],
-  ["vasvra", "'n Kort toetsie om te sien wat jy onthou."],
-  ["vordering", "Hoeveel werk jy klaar geleer het."],
-  ["herhaal", "Om iets weer te oefen sodat jy dit beter onthou."]
+  ["onderhoud", "'n Gesprek waar iemand vrae vra om inligting te kry."],
+  ["ondersoek", "Om iets mooi na te gaan om meer daaroor uit te vind."],
+  ["geskiedenis", "Die studie van mense en gebeure uit die verlede."],
+  ["vuurtoring", "'n Hoe toring met 'n lig wat skepe naby die kus waarsku."],
+  ["promenade", "'n Pad of stapplek langs die see."],
+  ["storms", "Baie slegte weer met sterk wind, reen of donderweer."],
+  ["seine", "Tekens, ligte of geluide wat 'n boodskap gee."],
+  ["kus", "Die plek waar land en see bymekaar kom."],
+  ["skipbreuk ly", "Wanneer 'n skip breek of sink, gewoonlik op rotse of in 'n storm."],
+  ["gemeenskap", "'n Groep mense wat in dieselfde plek woon of saam hoort."],
+  ["karakter", "Hoe iemand binne is en optree, soos eerlik, dapper of vriendelik."],
+  ["respekteer", "Om iemand of iets met waardigheid en goeie maniere te behandel."],
+  ["eienskappe", "Kenmerke wat wys hoe iemand of iets is."],
+  ["apartheid", "'n Onregverdige stelsel wat mense volgens ras geskei het."],
+  ["protes", "Wanneer mense wys dat hulle teen iets is."],
+  ["manifes", "'n Dokument wat se wat 'n groep glo of wil verander."],
+  ["politieke gevangenes", "Mense wat tronk toe gestuur word vir dit waarin hulle glo."]
 ];
 
 const state = {
