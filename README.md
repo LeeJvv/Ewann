@@ -1,17 +1,19 @@
-# Ewann se Graad 4 NWT Leermaat
+# Ewann se Graad 4 Leer-apps
 
-Afrikaanse iPad-vriendelike leer-app vir Ewann se Graad 4 Natuurwetenskappe en Tegnologie werk.
+Afrikaanse iPad-vriendelike leer-apps vir Ewann se vakke.
 
-Die app het:
+Hooflink:
 
-- 'n leerpad vir kort opsommings
-- flitskaarte
-- 'n vasvra
-- vraestel-oefening met modelantwoorde
-- 'n volgorde-afdeling vir prosesse en stappe
-- 'n woordelys
+- `https://leejvv.github.io/Ewann/`
 
-Wanneer daar nuwe NWT opsommings, fotos of dokumente is, werk ons hoofsaaklik `app.js` se data-afdelings by:
+Aparte vaklinks:
+
+- NWT: `https://leejvv.github.io/Ewann/nwt/`
+- Geografie: `https://leejvv.github.io/Ewann/geografie/`
+
+Elke vak het sy eie mini-app, eie vordering en eie inhoud.
+
+Wanneer daar nuwe opsommings, fotos of dokumente is, werk ons die betrokke vak se `app.js` data-afdelings by:
 
 - `learningItems`
 - `flashcards`
@@ -19,14 +21,3 @@ Wanneer daar nuwe NWT opsommings, fotos of dokumente is, werk ons hoofsaaklik `a
 - `examPractice`
 - `timeline`
 - `words`
-
-Huidige inhoud:
-
-- Materie en die drie toestande
-- Toestandveranderinge: smelt, verdamp, kondenseer en stol
-- Die watersiklus en hoekom dit belangrik is
-- Rou en vervaardigde materiale
-- Eienskappe van materiale
-- Oefenvrae vir die assessering op 9 Junie 2026
-
-Maak `index.html` oop, of publiseer die repo met GitHub Pages vanaf die `main` branch.
