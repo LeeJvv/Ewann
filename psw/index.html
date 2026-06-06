@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="af">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ewann se PSW Leermaat</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="title-block">
+        <span class="subject-chip">Ewann | Graad 4 PSW</span>
+        <h1>PSW Leermaat</h1>
+        <p>Afknouery, emosies, kinderregte, verantwoordelikhede en groepwerk vir die eksamen op 8 Junie 2026.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 220" role="img">
+          <defs>
+            <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#fef3c7"></stop>
+              <stop offset="1" stop-color="#bfdbfe"></stop>
+            </linearGradient>
+          </defs>
+          <rect width="320" height="220" rx="22" fill="url(#sky)"></rect>
+          <path d="M42 165c42-42 86-49 132-24 31 17 67 19 106 2v56H42z" fill="#1d4ed8" opacity=".78"></path>
+          <circle cx="103" cy="80" r="31" fill="#f59e0b"></circle>
+          <circle cx="103" cy="72" r="5" fill="#17212b"></circle>
+          <circle cx="120" cy="72" r="5" fill="#17212b"></circle>
+          <path d="M97 91c10 10 24 10 34 0" fill="none" stroke="#17212b" stroke-width="5" stroke-linecap="round"></path>
+          <path d="M164 55h91c10 0 18 8 18 18v58c0 10-8 18-18 18h-49l-29 25v-25h-13c-10 0-18-8-18-18V73c0-10 8-18 18-18z" fill="#ffffff" stroke="#0f766e" stroke-width="6" stroke-linejoin="round"></path>
+          <path d="M173 83h73M173 105h60M173 127h48" stroke="#0f766e" stroke-width="7" stroke-linecap="round"></path>
+          <path d="M72 150h78M92 128v43M130 128v43" stroke="#f8fafc" stroke-width="8" stroke-linecap="round"></path>
+        </svg>
+      </div>
+    </header>
+
+    <main>
+      <section class="progress-panel" aria-label="Vordering">
+        <div>
+          <span class="eyebrow">Vandag se mikpunt</span>
+          <h2>Ken die woorde. Kies goeie optrede. Oefen antwoorde.</h2>
+        </div>
+        <div class="progress-card">
+          <span id="progressText">0 van 0 voltooi</span>
+          <div class="progress-track">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Afdelings">
+        <button class="tab is-active" data-view="learn">Leerpad</button>
+        <button class="tab" data-view="cards">Flitskaarte</button>
+        <button class="tab" data-view="quiz">Vasvra</button>
+        <button class="tab" data-view="practice">Vraestel-oefen</button>
+        <button class="tab" data-view="timeline">Volgorde</button>
+        <button class="tab" data-view="words">Woordelys</button>
+      </nav>
+
+      <section id="learn" class="view is-active" aria-labelledby="learnTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Leerpad</span>
+            <h2 id="learnTitle">Lees kort. Merk klaar. Herhaal weer.</h2>
+          </div>
+          <button id="resetProgress" class="secondary-button" type="button">Herstel vordering</button>
+        </div>
+        <div id="topicGrid" class="topic-grid"></div>
+      </section>
+
+      <section id="cards" class="view" aria-labelledby="cardsTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Flitskaarte</span>
+            <h2 id="cardsTitle">Draai die kaart om en se die antwoord hardop</h2>
+          </div>
+          <div class="card-actions">
+            <button id="prevCard" class="icon-button" type="button" aria-label="Vorige kaart">&lsaquo;</button>
+            <button id="flipCard" class="primary-button" type="button">Wys antwoord</button>
+            <button id="nextCard" class="icon-button" type="button" aria-label="Volgende kaart">&rsaquo;</button>
+          </div>
+        </div>
+        <article id="flashcard" class="flashcard" tabindex="0" aria-live="polite"></article>
+        <p id="cardCounter" class="counter"></p>
+      </section>
+
+      <section id="quiz" class="view" aria-labelledby="quizTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Vasvra</span>
+            <h2 id="quizTitle">Toets jou kennis</h2>
+          </div>
+          <button id="restartQuiz" class="secondary-button" type="button">Begin weer</button>
+        </div>
+        <div id="quizBox" class="quiz-box"></div>
+      </section>
+
+      <section id="practice" class="view" aria-labelledby="practiceTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Vraestel-oefen</span>
+            <h2 id="practiceTitle">Oefen antwoorde soos in die eksamen</h2>
+          </div>
+        </div>
+        <div id="practiceList" class="practice-list"></div>
+      </section>
+
+      <section id="timeline" class="view" aria-labelledby="timelineTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Volgorde</span>
+            <h2 id="timelineTitle">Wat om te doen, stap vir stap</h2>
+          </div>
+        </div>
+        <div id="timelineList" class="timeline"></div>
+      </section>
+
+      <section id="words" class="view" aria-labelledby="wordsTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Woordelys</span>
+            <h2 id="wordsTitle">PSW-woorde om te onthou</h2>
+          </div>
+          <label class="search-box">
+            <span>Soek</span>
+            <input id="wordSearch" type="search" placeholder="bv. konflik">
+          </label>
+        </div>
+        <div id="wordList" class="word-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

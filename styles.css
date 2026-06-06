@@ -113,3 +113,9 @@ body {
     linear-gradient(135deg, rgba(29, 78, 216, .08), rgba(21, 128, 61, .12)),
     var(--surface);
 }
+
+.psw-card {
+  background:
+    linear-gradient(135deg, rgba(217, 119, 6, .1), rgba(29, 78, 216, .1)),
+    var(--surface);
+}
