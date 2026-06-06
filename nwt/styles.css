@@ -469,6 +469,114 @@ main {
   font-weight: 800;
 }
 
+.cycle-game {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.cycle-board {
+  min-width: 0;
+}
+
+.cycle-stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.cycle-svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1000 / 650;
+}
+
+.drop-zone {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: clamp(92px, 14vw, 150px);
+  min-height: 38px;
+  padding: 6px 8px;
+  border: 2px dashed rgba(15, 118, 110, .55);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .88);
+  color: var(--teal-dark);
+  text-align: center;
+  font-size: clamp(.7rem, 1.5vw, .95rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.drop-zone::before {
+  content: "?";
+  color: rgba(91, 102, 115, .55);
+}
+
+.drop-zone.is-filled::before {
+  content: "";
+}
+
+.drop-zone.is-correct {
+  border-color: var(--green);
+  background: #dcfce7;
+  color: #14532d;
+}
+
+.drop-zone.is-wrong {
+  border-color: var(--red);
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+.cycle-labels {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .82);
+}
+
+.cycle-chip {
+  min-height: 42px;
+  border: 1px solid #c9d8de;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 800;
+  touch-action: none;
+  user-select: none;
+}
+
+.cycle-chip.is-selected {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.cycle-chip.is-used {
+  opacity: .42;
+  cursor: not-allowed;
+}
+
+.cycle-chip.is-dragging {
+  position: fixed;
+  z-index: 20;
+  pointer-events: none;
+  box-shadow: 0 16px 28px rgba(15, 23, 42, .18);
+}
+
+.cycle-feedback {
+  margin: 12px 0 0;
+}
+
 @media (max-width: 760px) {
   .app-header {
     grid-template-columns: 1fr;
@@ -495,5 +603,18 @@ main {
 
   .card-actions {
     flex-wrap: wrap;
+  }
+
+  .cycle-game {
+    grid-template-columns: 1fr;
+  }
+
+  .cycle-labels {
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  }
+
+  .drop-zone {
+    width: clamp(78px, 19vw, 120px);
+    min-height: 34px;
   }
 }

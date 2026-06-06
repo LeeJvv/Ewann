@@ -296,6 +296,18 @@ const examPractice = [
   }
 ];
 
+const cycleItems = [
+  { id: "son", label: "Son", x: 78, y: 13 },
+  { id: "verdamping", label: "Verdamping", x: 72, y: 46 },
+  { id: "kondensasie", label: "Kondensasie", x: 43, y: 24 },
+  { id: "neerslag", label: "Neerslag", x: 21, y: 33 },
+  { id: "afloop", label: "Afloop", x: 33, y: 69 },
+  { id: "grondwater", label: "Grondwater", x: 36, y: 86 },
+  { id: "riviere", label: "Riviere en strome", x: 45, y: 61 },
+  { id: "see", label: "See", x: 77, y: 75 },
+  { id: "wind", label: "Wind", x: 58, y: 17 }
+];
+
 const emptyCopy = {
   learn: {
     title: "NWT-leerwerk kom hier in",
@@ -333,6 +345,11 @@ const state = {
 };
 
 const $ = (selector) => document.querySelector(selector);
+const cycleState = {
+  answers: {},
+  selected: null,
+  drag: null
+};
 
 function saveProgress() {
   localStorage.setItem("ewannNwtDone", JSON.stringify([...state.done]));
@@ -463,6 +480,146 @@ function renderPractice() {
   `).join("");
 }
 
+function cycleDiagram() {
+  return `
+    <svg class="cycle-svg" viewBox="0 0 1000 650" role="img" aria-label="Watersiklus prent">
+      <defs>
+        <linearGradient id="cycleSky" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#dbeafe"></stop>
+          <stop offset="1" stop-color="#f8fafc"></stop>
+        </linearGradient>
+        <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#0f766e"></path>
+        </marker>
+      </defs>
+      <rect width="1000" height="650" rx="18" fill="url(#cycleSky)"></rect>
+      <circle cx="800" cy="92" r="55" fill="#facc15"></circle>
+      <g stroke="#f59e0b" stroke-width="6" stroke-linecap="round">
+        <path d="M800 18v-18M800 184v-18M726 92h-18M892 92h-18M748 40l-13-13M867 157l-13-13M748 144l-13 13M867 27l-13 13"></path>
+      </g>
+      <path d="M45 448c80-155 170-230 270-120 72-130 162-155 270 100z" fill="#94a3b8"></path>
+      <path d="M168 448c48-88 103-130 164-62 44-76 100-94 165 62z" fill="#f8fafc" opacity=".82"></path>
+      <path d="M0 450h1000v200H0z" fill="#bfdbfe"></path>
+      <path d="M0 508c130 34 260-20 385 12 124 32 250-6 378 16 92 15 157 0 237-20v134H0z" fill="#60a5fa" opacity=".85"></path>
+      <path d="M358 450c52 8 78 22 84 42 12 44-68 56-88 92" fill="none" stroke="#1d4ed8" stroke-width="16" stroke-linecap="round"></path>
+      <path d="M112 450c56 52 124 73 215 77" fill="none" stroke="#38bdf8" stroke-width="14" stroke-linecap="round"></path>
+      <path d="M55 590c170-20 320-20 470 0" fill="none" stroke="#2563eb" stroke-width="9" stroke-linecap="round" opacity=".62"></path>
+      <path d="M648 392c0-82 38-152 72-214" fill="none" stroke="#0f766e" stroke-width="12" stroke-linecap="round" marker-end="url(#arrowHead)"></path>
+      <path d="M742 185c-96-56-210-54-310-2" fill="none" stroke="#0f766e" stroke-width="12" stroke-linecap="round" marker-end="url(#arrowHead)"></path>
+      <path d="M318 218c-40 60-72 100-114 154" fill="none" stroke="#0f766e" stroke-width="12" stroke-linecap="round" marker-end="url(#arrowHead)"></path>
+      <path d="M180 470c86 16 165 26 260 28" fill="none" stroke="#0f766e" stroke-width="10" stroke-linecap="round" marker-end="url(#arrowHead)"></path>
+      <g fill="#ffffff" stroke="#94a3b8" stroke-width="5">
+        <ellipse cx="245" cy="163" rx="88" ry="36"></ellipse>
+        <ellipse cx="315" cy="155" rx="76" ry="42"></ellipse>
+        <ellipse cx="388" cy="176" rx="86" ry="35"></ellipse>
+        <ellipse cx="525" cy="185" rx="76" ry="32"></ellipse>
+        <ellipse cx="586" cy="176" rx="64" ry="34"></ellipse>
+      </g>
+      <g stroke="#1d4ed8" stroke-width="6" stroke-linecap="round">
+        <path d="M197 244v30M240 235v34M283 242v31M326 236v34M369 244v28"></path>
+      </g>
+      <g fill="#14532d">
+        <path d="M125 470l18-55 18 55z"></path><path d="M165 470l18-65 18 65z"></path>
+        <path d="M545 470l18-55 18 55z"></path><path d="M582 470l18-62 18 62z"></path>
+      </g>
+    </svg>
+  `;
+}
+
+function renderCycle() {
+  const board = $("#cycleBoard");
+  const labels = $("#cycleLabels");
+  board.innerHTML = `
+    <div class="cycle-stage">
+      ${cycleDiagram()}
+      ${cycleItems.map((item) => `
+        <button class="drop-zone ${cycleState.answers[item.id] ? "is-filled" : ""}" style="left:${item.x}%; top:${item.y}%;" data-zone="${item.id}" type="button" aria-label="${item.label} posisie">
+          ${cycleState.answers[item.id] ? `<span>${cycleState.answers[item.id]}</span>` : ""}
+        </button>
+      `).join("")}
+    </div>
+  `;
+
+  const usedLabels = new Set(Object.values(cycleState.answers));
+  labels.innerHTML = cycleItems.map((item) => `
+    <button class="cycle-chip ${usedLabels.has(item.label) ? "is-used" : ""} ${cycleState.selected === item.label ? "is-selected" : ""}" data-label="${item.label}" type="button">
+      ${item.label}
+    </button>
+  `).join("");
+}
+
+function placeCycleLabel(label, zoneId) {
+  const oldZone = Object.keys(cycleState.answers).find((key) => cycleState.answers[key] === label);
+  if (oldZone) delete cycleState.answers[oldZone];
+  cycleState.answers[zoneId] = label;
+  cycleState.selected = null;
+  $("#cycleFeedback").textContent = "";
+  renderCycle();
+}
+
+function nearestCycleZone(x, y) {
+  const zones = [...document.querySelectorAll(".drop-zone")];
+  return zones.find((zone) => {
+    const box = zone.getBoundingClientRect();
+    return x >= box.left && x <= box.right && y >= box.top && y <= box.bottom;
+  });
+}
+
+function startCycleDrag(event) {
+  const chip = event.target.closest(".cycle-chip");
+  if (!chip || chip.classList.contains("is-used")) return;
+  event.preventDefault();
+  const box = chip.getBoundingClientRect();
+  const ghost = chip.cloneNode(true);
+  ghost.classList.add("is-dragging");
+  ghost.style.width = `${box.width}px`;
+  document.body.appendChild(ghost);
+  cycleState.drag = {
+    label: chip.dataset.label,
+    ghost,
+    offsetX: event.clientX - box.left,
+    offsetY: event.clientY - box.top
+  };
+  moveCycleGhost(event.clientX, event.clientY);
+  chip.setPointerCapture(event.pointerId);
+}
+
+function moveCycleGhost(x, y) {
+  if (!cycleState.drag) return;
+  cycleState.drag.ghost.style.left = `${x - cycleState.drag.offsetX}px`;
+  cycleState.drag.ghost.style.top = `${y - cycleState.drag.offsetY}px`;
+}
+
+function moveCycleDrag(event) {
+  if (!cycleState.drag) return;
+  moveCycleGhost(event.clientX, event.clientY);
+}
+
+function finishCycleDrag(event) {
+  if (!cycleState.drag) return;
+  const zone = nearestCycleZone(event.clientX, event.clientY);
+  const label = cycleState.drag.label;
+  cycleState.drag.ghost.remove();
+  cycleState.drag = null;
+  if (zone) {
+    placeCycleLabel(label, zone.dataset.zone);
+  }
+}
+
+function checkCycleAnswers() {
+  const total = cycleItems.length;
+  const correct = cycleItems.filter((item) => cycleState.answers[item.id] === item.label).length;
+  document.querySelectorAll(".drop-zone").forEach((zone) => {
+    const item = cycleItems.find((entry) => entry.id === zone.dataset.zone);
+    zone.classList.remove("is-correct", "is-wrong");
+    if (!cycleState.answers[item.id]) return;
+    zone.classList.add(cycleState.answers[item.id] === item.label ? "is-correct" : "is-wrong");
+  });
+  $("#cycleFeedback").textContent = correct === total
+    ? `Reg. Al ${total} byskrifte is op die regte plek.`
+    : `${correct} uit ${total} reg. Skuif die rooi antwoorde en probeer weer.`;
+}
+
 function renderTimeline() {
   if (!timeline.length) {
     $("#timelineList").innerHTML = emptyCard(emptyCopy.timeline);
@@ -579,10 +736,44 @@ $("#restartQuiz").addEventListener("click", () => {
 
 $("#wordSearch").addEventListener("input", (event) => renderWords(event.target.value));
 
+$("#cycleLabels").addEventListener("pointerdown", startCycleDrag);
+document.addEventListener("pointermove", moveCycleDrag);
+document.addEventListener("pointerup", finishCycleDrag);
+
+$("#cycleLabels").addEventListener("click", (event) => {
+  const chip = event.target.closest(".cycle-chip");
+  if (!chip || chip.classList.contains("is-used")) return;
+  cycleState.selected = chip.dataset.label;
+  renderCycle();
+});
+
+$("#cycleBoard").addEventListener("click", (event) => {
+  const zone = event.target.closest(".drop-zone");
+  if (!zone) return;
+  if (!cycleState.selected && cycleState.answers[zone.dataset.zone]) {
+    delete cycleState.answers[zone.dataset.zone];
+    $("#cycleFeedback").textContent = "";
+    renderCycle();
+    return;
+  }
+  if (!cycleState.selected) return;
+  placeCycleLabel(cycleState.selected, zone.dataset.zone);
+});
+
+$("#checkCycle").addEventListener("click", checkCycleAnswers);
+
+$("#resetCycle").addEventListener("click", () => {
+  cycleState.answers = {};
+  cycleState.selected = null;
+  $("#cycleFeedback").textContent = "";
+  renderCycle();
+});
+
 renderTopics();
 renderProgress();
 renderCard();
 renderQuiz();
 renderPractice();
+renderCycle();
 renderTimeline();
 renderWords();
