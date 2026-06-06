@@ -20,6 +20,13 @@ Wanneer daar nuwe NWT opsommings, fotos of dokumente is, werk ons hoofsaaklik `a
 - `timeline`
 - `words`
 
-Die huidige app is gereed vir NWT-inhoud. Die Geskiedenis-inhoud is uit hierdie weergawe verwyder sodat Ewann se NWT werk apart gelaai kan word.
+Huidige inhoud:
+
+- Materie en die drie toestande
+- Toestandveranderinge: smelt, verdamp, kondenseer en stol
+- Die watersiklus en hoekom dit belangrik is
+- Rou en vervaardigde materiale
+- Eienskappe van materiale
+- Oefenvrae vir die assessering op 9 Junie 2026
 
 Maak `index.html` oop, of publiseer die repo met GitHub Pages vanaf die `main` branch.

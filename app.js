@@ -17,12 +17,284 @@ const topicPictures = [
   }
 ];
 
-const learningItems = [];
-const flashcards = [];
-const quiz = [];
-const timeline = [];
-const words = [];
-const examPractice = [];
+const learningItems = [
+  {
+    title: "Assessering: wat om te leer",
+    picture: 3,
+    groups: [
+      { label: "Datum en vak", lines: ["NWT assessering: 9 Junie 2026.", "Gebruik jou skrifte, handboek en opsomming om te leer."] },
+      { label: "Hoofstukke", lines: ["Materiale om ons.", "Toestandverandering.", "Die watersiklus.", "Vaste materiale.", "Eienskappe van materiale."] },
+      { label: "Wat om goed te ken", lines: ["Definisies.", "Voorbeelde.", "Byskrifte op prente.", "Hoe prosesse in volgorde werk."] }
+    ]
+  },
+  {
+    title: "Die drie toestande van materie",
+    picture: 0,
+    groups: [
+      { label: "Vaste stof", lines: ["Het 'n vaste vorm.", "Voorbeelde: hout, klip, plastiek en appels.", "Deeltjies is naby mekaar en netjies gepak."] },
+      { label: "Vloeistof", lines: ["Kan vloei.", "Neem die vorm van die houer aan.", "Voorbeelde: water, kookolie en tee."] },
+      { label: "Gas", lines: ["Het geen vaste vorm nie.", "Deeltjies beweeg rond en vul die ruimte.", "Voorbeelde: gas vir koskook en stoom."] }
+    ]
+  },
+  {
+    title: "Toestandveranderinge",
+    picture: 2,
+    groups: [
+      { label: "Wanneer hitte bykom", lines: ["Smelt: 'n vaste stof verander in 'n vloeistof.", "Verdamp: 'n vloeistof verander in 'n gas.", "Voorbeelde: roomys smelt, water kook en verdamp."] },
+      { label: "Wanneer hitte weggaan", lines: ["Kondenseer: 'n gas koel af en verander in 'n vloeistof.", "Stol: 'n vloeistof verloor hitte en verander in 'n vaste stof.", "Voorbeelde: wasem vorm druppels, jellie stol."] },
+      { label: "Termometer", lines: ["'n Termometer meet temperatuur.", "Die vloeistof binne beweeg op wanneer dit warmer raak."] }
+    ]
+  },
+  {
+    title: "Die watersiklus",
+    picture: 1,
+    groups: [
+      { label: "Wat is dit?", lines: ["Die watersiklus is die beweging van water vanaf land en see na die lug en weer terug.", "Water verander van toestand in hierdie siklus.", "Die water op aarde beweeg heeltyd in die rondte."] },
+      { label: "Byskrifte om te ken", lines: ["Son.", "Wind.", "Verdamping.", "Kondensasie.", "Neerslag.", "Afloop.", "Grondwater.", "Riviere en strome.", "See."] },
+      { label: "Aardverwarming", lines: ["As die aarde warmer word, verdamp meer water.", "Die watersiklus kan verander as gevolg van aardverwarming."] }
+    ]
+  },
+  {
+    title: "Waarom die watersiklus belangrik is",
+    picture: 1,
+    groups: [
+      { label: "Varswater", lines: ["Reen, sneeu en ander neerslag gee vars water.", "Riviere, mere en grondwater kry water.", "Mense, diere en plante het vars water nodig."] },
+      { label: "Lewe op aarde", lines: ["Plante het water nodig vir fotosintese.", "Sonder plante is daar minder kos en suurstof.", "Lewe op aarde is afhanklik van die watersiklus."] },
+      { label: "Suiwering en temperatuur", lines: ["Verdamping en kondensasie help water natuurlik suiwer.", "Die watersiklus help ook om temperatuur te reguleer."] }
+    ]
+  },
+  {
+    title: "Rou en vervaardigde materiale",
+    picture: 3,
+    groups: [
+      { label: "Rou materiaal", lines: ["Kom uit die natuur.", "Voorbeelde: hout, klei, sand, klip, katoen, diervelle, wol, steenkool en olie."] },
+      { label: "Vervaardigde materiaal", lines: ["Word deur mense uit natuurlike materiale gemaak.", "Voorbeelde: glas, keramiek, plastiek, leer, vesel, tafels, bakstene, hemde en spykers."] },
+      { label: "Onthou", lines: ["Rou materiale kan verander word om nuwe materiale te maak.", "Soms word rou materiale gemeng of verhit."] }
+    ]
+  },
+  {
+    title: "Hoe materiale vervaardig word",
+    picture: 0,
+    groups: [
+      { label: "Sand word glas", lines: ["Sand bestaan uit baie fyn klipdeeltjies.", "Wanneer sand verhit word, smelt dit tot 'n vloeistof.", "Wanneer dit afkoel, word dit glas."] },
+      { label: "Klei word keramiek", lines: ["Klei bestaan uit klein gladde stukkies gebreekte klip.", "Klei kan maklik gevorm word.", "Wanneer klei in 'n warm oond gebak word, word dit keramiek."] },
+      { label: "Steenkool en olie word plastiek/vesel", lines: ["Steenkool en olie kom uit die grond.", "Hierdie materiale kan saam plastiek vorm.", "Nylon en polyester is vesels wat uit steenkool en olie gemaak kan word."] }
+    ]
+  },
+  {
+    title: "Eienskappe van materiale",
+    picture: 3,
+    groups: [
+      { label: "Woorde om te gebruik", lines: ["Hard.", "Sag.", "Buigsaam.", "Sterk.", "Swak.", "Bros.", "Waterdig.", "Absorberend.", "Lig of swaar."] },
+      { label: "Voorbeelde", lines: ["Leer is buigsaam en word van diervelle gemaak.", "Wol is sag en buigsaam.", "Keramiek is hard, maar bros.", "Glas is helder, hard en kan maklik breek."] },
+      { label: "Vrae in die toets", lines: ["Beskryf hoe 'n materiaal lyk.", "Se waarvan dit gemaak is.", "Noem die eienskappe van die materiaal."] }
+    ]
+  }
+];
+
+const flashcards = [
+  ["Wat is materie?", "Alles rondom ons wat ruimte opneem."],
+  ["Noem die drie toestande van materie.", "Vaste stof, vloeistof en gas."],
+  ["Wat is 'n vaste stof?", "Iets wat 'n vaste vorm het, soos hout, klip of plastiek."],
+  ["Wat is 'n vloeistof?", "Iets wat kan vloei en die vorm van die houer aanneem."],
+  ["Wat is 'n gas?", "Iets sonder vaste vorm waarvan die deeltjies rondbeweeg en die ruimte vul."],
+  ["Wat beteken smelt?", "'n Vaste stof kry hitte en verander in 'n vloeistof."],
+  ["Wat beteken verdamp?", "'n Vloeistof kry hitte en verander in 'n gas."],
+  ["Wat beteken kondenseer?", "'n Gas koel af en verander in 'n vloeistof."],
+  ["Wat beteken stol?", "'n Vloeistof verloor hitte en verander in 'n vaste stof."],
+  ["Waarvoor gebruik ons 'n termometer?", "Om temperatuur te meet."],
+  ["Wat is die watersiklus?", "Die beweging van water vanaf land en see na die lug en weer terug."],
+  ["Noem vier byskrifte op die watersiklus.", "Son, verdamping, kondensasie, neerslag, afloop, grondwater, riviere/strome of see."],
+  ["Hoekom is die watersiklus belangrik?", "Dit gee vars water, help plante groei, reguleer temperatuur en suiwer water natuurlik."],
+  ["Wat is rou materiaal?", "Materiaal wat uit die natuur kom."],
+  ["Wat is vervaardigde materiaal?", "Materiaal of voorwerpe wat mense uit natuurlike materiale maak."],
+  ["Waarvan word glas gemaak?", "Van sand wat verhit en afgekoel word."],
+  ["Waarvan word keramiek gemaak?", "Van klei wat gebak word."],
+  ["Waarvan word leer gemaak?", "Van diervelle."],
+  ["Wat beteken bros?", "Dit breek maklik."],
+  ["Wat beteken absorberend?", "Dit suig vloeistof maklik op."]
+];
+
+const quiz = [
+  {
+    question: "Watter een is 'n vaste stof?",
+    options: ["Hout", "Water", "Stoom", "Wind"],
+    answer: 0,
+    fact: "Hout het 'n vaste vorm en is dus 'n vaste stof."
+  },
+  {
+    question: "Wat gebeur wanneer roomys smelt?",
+    options: ["Vaste stof verander in vloeistof", "Gas verander in vloeistof", "Vloeistof verander in gas", "Vloeistof verander in vaste stof"],
+    answer: 0,
+    fact: "Smelt gebeur wanneer 'n vaste stof hitte kry."
+  },
+  {
+    question: "Wat beteken verdamping?",
+    options: ["Vloeistof verander in gas", "Gas verander in vloeistof", "Vaste stof verander in vloeistof", "Vloeistof word hard"],
+    answer: 0,
+    fact: "Wanneer water kook of in die lug verdamp, verander dit in gas."
+  },
+  {
+    question: "Wat beteken kondensasie?",
+    options: ["Gas verander in vloeistof", "Sand word glas", "Klei word hard", "Water loop in riviere af"],
+    answer: 0,
+    fact: "Wasem wat op 'n koue oppervlak druppels vorm, is kondensasie."
+  },
+  {
+    question: "Wat meet 'n termometer?",
+    options: ["Temperatuur", "Wind", "Gewig", "Kleur"],
+    answer: 0,
+    fact: "'n Termometer wys hoe warm of koud iets is."
+  },
+  {
+    question: "Watter woord beteken water wat uit wolke val?",
+    options: ["Neerslag", "Verdamping", "Kondensasie", "Grondwater"],
+    answer: 0,
+    fact: "Neerslag kan reen, sneeu of hael wees."
+  },
+  {
+    question: "Wat is afloop?",
+    options: ["Water wat oor die aardoppervlak na strome, riviere en mere loop", "Water wat in gas verander", "Waterdruppels in wolke", "Die son se hitte"],
+    answer: 0,
+    fact: "Afloop is water wat oor die oppervlak wegvloei."
+  },
+  {
+    question: "Hoekom kan lewe nie goed sonder die watersiklus voortgaan nie?",
+    options: ["Daar sou nie genoeg varswater wees nie", "Alle klippe sou verdwyn", "Sand sou altyd smelt", "Alle materiale sou plastiek word"],
+    answer: 0,
+    fact: "Mense, diere en plante het vars water nodig."
+  },
+  {
+    question: "Wat is 'n voorbeeld van rou materiaal?",
+    options: ["Hout", "Tafel", "Glasbeker", "Plastieksak"],
+    answer: 0,
+    fact: "Hout kom uit die natuur."
+  },
+  {
+    question: "Wat is 'n voorbeeld van vervaardigde materiaal of produk?",
+    options: ["Baksteen", "Klip", "Katoenplant", "Sand"],
+    answer: 0,
+    fact: "Bakstene word deur mense gemaak."
+  },
+  {
+    question: "Waarvan word glas gemaak?",
+    options: ["Sand", "Diervelle", "Wol", "Reenwater"],
+    answer: 0,
+    fact: "Sand word verhit, smelt, word gevorm en koel dan af as glas."
+  },
+  {
+    question: "Waarvan word keramiek gemaak?",
+    options: ["Klei en klip/sand", "Steenkool en olie", "Katoen", "Waterdamp"],
+    answer: 0,
+    fact: "Klei kan gebak word om keramiek te maak."
+  },
+  {
+    question: "Watter materiaal word uit diervelle gemaak?",
+    options: ["Leer", "Glas", "Klei", "Stoom"],
+    answer: 0,
+    fact: "Leer is 'n buigsame materiaal wat van diervelle gemaak word."
+  },
+  {
+    question: "Wat beteken bros?",
+    options: ["Breek maklik", "Suig water op", "Kan vloei", "Word in wolke gemaak"],
+    answer: 0,
+    fact: "Keramiek is hard, maar kan bros wees."
+  },
+  {
+    question: "Wat beteken absorberend?",
+    options: ["Suig vloeistof maklik op", "Breek maklik", "Is gemaak van olie", "Verander in gas"],
+    answer: 0,
+    fact: "Absorberend beteken dit neem vloeistof op."
+  }
+];
+
+const timeline = [
+  ["1. Materie", "Alles rondom ons is materie en kan vaste stof, vloeistof of gas wees."],
+  ["2. Deeltjies", "Kyk hoe deeltjies in vaste stowwe, vloeistowwe en gasse gerangskik is."],
+  ["3. Hitte by", "Smelt en verdamp gebeur wanneer hitte bykom."],
+  ["4. Hitte weg", "Kondenseer en stol gebeur wanneer hitte weggaan of iets afkoel."],
+  ["5. Watersiklus", "Water beweeg vanaf land en see na die lug en weer terug."],
+  ["6. Varswater", "Die watersiklus gee vars water en help lewe op aarde."],
+  ["7. Rou materiaal", "Materiaal kom eers uit die natuur, soos hout, sand, klei en katoen."],
+  ["8. Vervaardiging", "Mense verander rou materiale in nuwe materiale of produkte."],
+  ["9. Eienskappe", "Beskryf materiale met woorde soos hard, sag, bros, buigsaam en waterdig."]
+];
+
+const words = [
+  ["materie", "Alles rondom ons wat ruimte opneem."],
+  ["vaste stof", "Materie wat 'n vaste vorm het."],
+  ["vloeistof", "Materie wat kan vloei en die vorm van die houer aanneem."],
+  ["gas", "Materie sonder vaste vorm wat die ruimte vul."],
+  ["verandering van toestand", "'n Stof verander van een toestand na 'n ander wanneer dit hitte verloor of hitte bykry."],
+  ["smelt", "'n Vaste stof kry hitte en verander in 'n vloeistof."],
+  ["verdamp", "'n Vloeistof verander in 'n gas."],
+  ["kondenseer", "'n Gas verander in 'n vloeistof."],
+  ["stol", "'n Vloeistof verander in 'n vaste stof."],
+  ["termometer", "'n Instrument wat temperatuur meet."],
+  ["watersiklus", "Die beweging van water vanaf land en see na die lug en weer terug."],
+  ["kondensasie", "Wanneer gas 'n vloeistof word."],
+  ["afloop", "Water wat oor die aardoppervlak in strome, riviere, visdamme en mere afloop."],
+  ["neerslag", "Water wat uit wolke val, soos reen, sneeu of hael."],
+  ["damp", "Klein druppeltjies wat baie ligter as water is."],
+  ["grondwater", "Water wat in die grond insak en ondergronds beweeg."],
+  ["rou materiaal", "Natuurlike materiaal wat in die natuur gevind word."],
+  ["vervaardigde materiaal", "Materiaal of produkte wat mense uit natuurlike materiale maak."],
+  ["sand", "Baie fyn klipdeeltjies."],
+  ["klei", "Klein, gladde stukkies gebreekte klip."],
+  ["vormbaar", "Kan maklik gevorm word."],
+  ["keramiek", "'n Harde materiaal gemaak van klei en klip/sand."],
+  ["bros", "Breek maklik."],
+  ["steenkool", "'n Harde swart stof wat uit die grond kom."],
+  ["plastiek", "Word gemaak uit stowwe wat in steenkool en olie gevind word."],
+  ["leer", "Buigsame materiaal wat van diervelle gemaak word."],
+  ["vesel", "Draadjies of toutjies in plant- en diermateriaal."],
+  ["absorberend", "Suig vloeistof maklik op."],
+  ["waterdig", "Laat water nie maklik deur nie."],
+  ["buigsaam", "Kan buig sonder om maklik te breek."]
+];
+
+const examPractice = [
+  {
+    marks: "3 punte",
+    question: "Noem die drie toestande van materie en gee een voorbeeld van elkeen.",
+    answer: ["Vaste stof: hout, klip, plastiek of appels.", "Vloeistof: water, kookolie of tee.", "Gas: stoom of gas vir koskook."]
+  },
+  {
+    marks: "4 punte",
+    question: "Verduidelik smelt, verdamp, kondenseer en stol kortliks.",
+    answer: ["Smelt: vaste stof verander in vloeistof.", "Verdamp: vloeistof verander in gas.", "Kondenseer: gas verander in vloeistof.", "Stol: vloeistof verander in vaste stof."]
+  },
+  {
+    marks: "4 punte",
+    question: "Gee vier byskrifte wat op 'n watersiklus-diagram kan voorkom.",
+    answer: ["Son.", "Verdamping.", "Kondensasie.", "Neerslag.", "Afloop.", "Grondwater.", "Riviere en strome.", "See.", "Wind."]
+  },
+  {
+    marks: "4 punte",
+    question: "Waarom is die watersiklus belangrik vir lewe op aarde?",
+    answer: ["Dit voorsien vars water aan riviere, mere en grondwater.", "Plante het water nodig om te groei.", "Dit help om temperatuur te reguleer.", "Dit help met natuurlike suiwering van water."]
+  },
+  {
+    marks: "4 punte",
+    question: "Verduidelik die verskil tussen rou materiale en vervaardigde materiale.",
+    answer: ["Rou materiale kom uit die natuur.", "Voorbeelde is hout, sand, klei, katoen en diervelle.", "Vervaardigde materiale word deur mense gemaak.", "Voorbeelde is glas, keramiek, plastiek, leer en bakstene."]
+  },
+  {
+    marks: "3 punte",
+    question: "Hoe word glas uit sand gemaak?",
+    answer: ["Sand word verhit.", "Die sand smelt tot 'n vloeistof en kan gevorm word.", "Wanneer dit afkoel, word dit glas."]
+  },
+  {
+    marks: "3 punte",
+    question: "Hoe word keramiek uit klei gemaak?",
+    answer: ["Klei kan maklik gevorm word.", "Die klei word in 'n baie warm oond gebak.", "Die gebakte klei word hard en verander in keramiek."]
+  },
+  {
+    marks: "5 punte",
+    question: "Beskryf die eienskappe van materiale met geskikte woorde.",
+    answer: ["Leer: buigsaam en sterk.", "Wol: sag en buigsaam.", "Keramiek: hard, maar bros.", "Glas: helder, hard en bros.", "Plastiek: kan buigsaam en waterdig wees."]
+  }
+];
 
 const emptyCopy = {
   learn: {
