@@ -139,6 +139,36 @@ main {
   padding: 18px 0;
 }
 
+.visual-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  padding: 18px 0 0;
+}
+
+.visual-strip figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.visual-strip img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #fff;
+}
+
+.visual-strip figcaption {
+  padding: 8px 10px 10px;
+  color: var(--teal-dark);
+  font-weight: 800;
+  text-align: center;
+}
+
 .tab,
 .primary-button,
 .secondary-button,
