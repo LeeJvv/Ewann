@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ewann Graad 4 Leermaat</title>
+    <title>Ewann se NWT Leermaat</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="app-header">
       <div class="title-block">
-        <span class="subject-chip">Ewann | Graad 4 Geskiedenis</span>
-        <h1>Geskiedenis Leermaat</h1>
-        <p>Kwartaal 1 se nuwe woorde en Nelson Mandela se lewensverhaal.</p>
+        <span class="subject-chip">Ewann | Graad 4 NWT</span>
+        <h1>NWT Leermaat</h1>
+        <p>Natuurwetenskappe en Tegnologie se nuwe leerwerk kom hier in.</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <svg viewBox="0 0 320 220" role="img">
@@ -24,11 +24,12 @@
           <rect width="320" height="220" rx="22" fill="url(#sky)"></rect>
           <path d="M42 165c42-42 86-49 132-24 31 17 67 19 106 2v56H42z" fill="#14532d" opacity=".9"></path>
           <path d="M70 153c30-22 60-26 94-11 30 13 58 11 88-4" fill="none" stroke="#fef3c7" stroke-width="7" stroke-linecap="round"></path>
-          <rect x="92" y="57" width="136" height="92" rx="12" fill="#ffffff"></rect>
-          <path d="M112 82h96M112 106h76M112 130h88" stroke="#2563eb" stroke-width="8" stroke-linecap="round"></path>
-          <circle cx="74" cy="72" r="28" fill="#f59e0b"></circle>
-          <path d="M240 58l22 16-8 26h-28l-8-26z" fill="#0f766e"></path>
-          <path d="M232 78h24" stroke="#ccfbf1" stroke-width="5" stroke-linecap="round"></path>
+          <path d="M139 55h42v18l28 54c9 18-4 39-25 39h-48c-21 0-34-21-25-39l28-54z" fill="#ffffff" stroke="#0f766e" stroke-width="7" stroke-linejoin="round"></path>
+          <path d="M126 132h68" stroke="#22c55e" stroke-width="11" stroke-linecap="round"></path>
+          <circle cx="140" cy="111" r="9" fill="#f59e0b"></circle>
+          <circle cx="172" cy="98" r="7" fill="#2563eb"></circle>
+          <path d="M236 53l22 16-8 26h-28l-8-26z" fill="#0f766e"></path>
+          <path d="M228 73h24" stroke="#ccfbf1" stroke-width="5" stroke-linecap="round"></path>
         </svg>
       </div>
     </header>
@@ -37,7 +38,7 @@
       <section class="progress-panel" aria-label="Vordering">
         <div>
           <span class="eyebrow">Vandag se mikpunt</span>
-          <h2>Leer die woorde. Ken die feite. Toets jouself.</h2>
+          <h2>Gereed vir nuwe NWT-leerwerk en oefenvrae.</h2>
         </div>
         <div class="progress-card">
           <span id="progressText">0 van 0 voltooi</span>
@@ -51,6 +52,7 @@
         <button class="tab is-active" data-view="learn">Leerpad</button>
         <button class="tab" data-view="cards">Flitskaarte</button>
         <button class="tab" data-view="quiz">Vasvra</button>
+        <button class="tab" data-view="practice">Vraestel-oefen</button>
         <button class="tab" data-view="timeline">Volgorde</button>
         <button class="tab" data-view="words">Woordelys</button>
       </nav>
@@ -59,7 +61,7 @@
         <div class="view-heading">
           <div>
             <span class="eyebrow">Leerpad</span>
-            <h2 id="learnTitle">Kyk. Lees kort. Merk klaar.</h2>
+            <h2 id="learnTitle">NWT-inhoud word binnekort bygevoeg</h2>
           </div>
           <button id="resetProgress" class="secondary-button" type="button">Herstel vordering</button>
         </div>
@@ -70,7 +72,7 @@
         <div class="view-heading">
           <div>
             <span class="eyebrow">Flitskaarte</span>
-            <h2 id="cardsTitle">Draai die kaart om en se die antwoord hardop</h2>
+            <h2 id="cardsTitle">Flitskaarte vir nuwe NWT-werk</h2>
           </div>
           <div class="card-actions">
             <button id="prevCard" class="icon-button" type="button" aria-label="Vorige kaart">&lsaquo;</button>
@@ -93,11 +95,21 @@
         <div id="quizBox" class="quiz-box"></div>
       </section>
 
+      <section id="practice" class="view" aria-labelledby="practiceTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Vraestel-oefen</span>
+            <h2 id="practiceTitle">Modelantwoorde kom uit die nuwe NWT-dokumente</h2>
+          </div>
+        </div>
+        <div id="practiceList" class="practice-list"></div>
+      </section>
+
       <section id="timeline" class="view" aria-labelledby="timelineTitle">
         <div class="view-heading">
           <div>
             <span class="eyebrow">Volgorde</span>
-            <h2 id="timelineTitle">Sit die belangrike idees in volgorde</h2>
+            <h2 id="timelineTitle">Prosesse en stappe in volgorde</h2>
           </div>
         </div>
         <div id="timelineList" class="timeline"></div>
@@ -107,11 +119,11 @@
         <div class="view-heading">
           <div>
             <span class="eyebrow">Woordelys</span>
-            <h2 id="wordsTitle">Belangrike woorde om te onthou</h2>
+            <h2 id="wordsTitle">NWT-woorde om te onthou</h2>
           </div>
           <label class="search-box">
             <span>Soek</span>
-            <input id="wordSearch" type="search" placeholder="bv. opsomming">
+            <input id="wordSearch" type="search" placeholder="bv. energie">
           </label>
         </div>
         <div id="wordList" class="word-list"></div>

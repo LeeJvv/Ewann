@@ -420,22 +420,53 @@ main {
   gap: 12px;
 }
 
-.word-card {
+.word-card,
+.practice-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 16px;
 }
 
-.word-card h3 {
+.word-card h3,
+.practice-card h3 {
   margin: 0 0 8px;
   color: var(--blue);
 }
 
-.word-card p {
+.word-card p,
+.practice-card p {
   margin: 0;
   color: var(--muted);
   line-height: 1.45;
+}
+
+.practice-list {
+  display: grid;
+  gap: 12px;
+}
+
+.practice-card {
+  display: grid;
+  gap: 10px;
+}
+
+.practice-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.practice-meta {
+  width: fit-content;
+  border-radius: 999px;
+  background: #ecfeff;
+  color: var(--teal-dark);
+  padding: 4px 10px;
+  font-size: .8rem;
+  font-weight: 800;
 }
 
 @media (max-width: 760px) {
