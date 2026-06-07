@@ -101,64 +101,76 @@ const flashcards = [
 
 const quiz = [
   {
-    question: "Wat is 'n sterk punt?",
-    options: ["Iets waarin jy goed is", "Iets waarin jy swak is", "Iets wat jou bang maak", "Iets wat jy verloor"],
-    answer: 0,
-    fact: "'n Sterk punt is iets waarin jy goed is."
+    question: "Ewann teken vinnig en netjies, maar hy sukkel nog met lang sinne. Watter deel is sy sterk punt?",
+    options: ["Lang sinne skryf", "Vinnig en netjies teken", "Sukkel met werk", "Moeg raak"],
+    answer: 1,
+    fact: "'n Sterk punt is iets waarin jy goed is, soos vinnig en netjies teken."
   },
   {
-    question: "Wat beteken konflik?",
-    options: ["Mense baklei of raak kwaad", "Mense help mekaar altyd", "Mense slaap vroeg", "Mense eet gesond"],
-    answer: 0,
-    fact: "Konflik gebeur wanneer mense baklei of kwaad raak."
+    question: "Twee maats wil albei die plakkaat se opskrif skryf en raak kwaad vir mekaar. Wat gebeur hier?",
+    options: ["Nasionaliteit", "Groepwerk wat klaar is", "Konflik", "Gesonde eetgewoontes"],
+    answer: 2,
+    fact: "Konflik gebeur wanneer mense verskil, baklei of kwaad raak."
   },
   {
-    question: "Wat moet jy doen as iemand jou afknou?",
-    options: ["Vertel 'n grootmens", "Terugbaklei", "Maak asof dit altyd reg is", "Spot hulle harder"],
-    answer: 0,
-    fact: "Kry hulp by 'n grootmens en moenie terugbaklei nie."
+    question: "Watter plan wys die beste optrede as iemand jou herhaaldelik spot en bang maak?",
+    options: ["Spot terug sodat hulle ophou", "Bly alleen en se niks", "Terugbaklei", "Stap weg, bly by 'n groep en vertel 'n grootmens"],
+    answer: 3,
+    fact: "Stap weg, bly by 'n groep, hou rekord en vertel 'n grootmens. Moenie terugbaklei nie."
   },
   {
-    question: "Watter een is 'n emosie?",
-    options: ["Gelukkig", "Huiswerk", "Potlood", "Tafel"],
+    question: "Watter sin wys 'n emosie?",
+    options: ["Ek voel bekommerd voor die toets.", "Ek sit my boek in my tas.", "Die potlood le op die tafel.", "Ons skryf Maandag toets."],
     answer: 0,
-    fact: "Gelukkig, hartseer, kwaad en bang is emosies."
+    fact: "Bekommerd, gelukkig, hartseer, kwaad en bang is emosies."
   },
   {
-    question: "Wat beteken angstig?",
-    options: ["Bang of bekommerd", "Baie honger", "Baie vinnig", "Om te wen"],
-    answer: 0,
+    question: "Iemand voel senuweeagtig en bekommerd oor iets wat kan gebeur. Watter woord pas die beste?",
+    options: ["Verslaaf", "Angstig", "Respekvol", "Nasionaliteit"],
+    answer: 1,
     fact: "Angstig beteken bang, bekommerd of senuweeagtig."
   },
   {
-    question: "Watter een help jou om beter te word in iets?",
-    options: ["Oefen baie", "Nooit probeer nie", "Min slaap", "Nie hulp vra nie"],
-    answer: 0,
-    fact: "Hoe meer jy oefen, hoe beter raak jy."
+    question: "Watter kombinasie sal jou die meeste help om beter te word vir 'n toets?",
+    options: ["Laat slaap, min water drink en raai", "Net die aand voor die toets begin", "Oefen gereeld, slaap genoeg, eet gesond en vra hulp", "Moenie moeilike woorde leer nie"],
+    answer: 2,
+    fact: "Gereelde oefening, genoeg slaap, gesonde kos, water en hulp vra bou beter leergewoontes."
   },
   {
-    question: "Watter reg pas by die verantwoordelikheid: gaan skool toe en doen huiswerk?",
-    options: ["Reg op opvoeding", "Reg op kos", "Reg op skuiling", "Reg op nasionaliteit"],
-    answer: 0,
-    fact: "Die reg op opvoeding kom saam met die verantwoordelikheid om skool toe te gaan en huiswerk te doen."
+    question: "Watter reg pas by hierdie verantwoordelikhede: luister vir die onderwyser, pas jou boeke op en doen huiswerk?",
+    options: ["Reg op kos", "Reg op opvoeding", "Reg op skuiling", "Reg op nasionaliteit"],
+    answer: 1,
+    fact: "Die reg op opvoeding kom saam met verantwoordelikhede soos skool toe gaan, luister en huiswerk doen."
   },
   {
-    question: "Wat is 'n verantwoordelikheid by die reg op kos?",
-    options: ["Eet gesond en mors nie", "Baklei oor kos", "Gooi kos weg", "Eet net lekkers"],
-    answer: 0,
-    fact: "Ons moet kos waardeer, gesond eet en nie mors nie."
+    question: "Jy het die reg op basiese voeding. Watter optrede pas by daardie reg?",
+    options: ["Gooi kos weg as jy nie daarvan hou nie", "Eet net lekkers", "Eet gesond en mors nie kos nie", "Baklei oor wie eerste eet"],
+    answer: 2,
+    fact: "By die reg op kos moet ons kos waardeer, gesond eet en nie mors nie."
   },
   {
-    question: "Wat is 'n probleem in groepwerk?",
-    options: ["Swak kommunikasie", "Maats help mekaar", "Goeie idees", "Almal luister"],
-    answer: 0,
-    fact: "Swak kommunikasie kan groepwerk moeilik maak."
+    question: "Watter voorbeeld is 'n probleem wat groepwerk moeilik kan maak?",
+    options: ["Almal bring hulle deel betyds", "Swak kommunikasie en maats wat nie saamwerk nie", "Maats help mekaar met idees", "Die groep luister na elke persoon"],
+    answer: 1,
+    fact: "Swak kommunikasie, konflik en maats wat nie saamwerk nie kan groepwerk moeilik maak."
   },
   {
-    question: "Waarom is groepwerk 'n goeie idee?",
-    options: ["Dit help leerders om saam te werk", "Dit maak almal stil", "Dit keer dat jy leer", "Dit maak konflik altyd erger"],
+    question: "Watter antwoord verduidelik die beste hoekom groepwerk nuttig is?",
+    options: ["Dit keer dat iemand nuwe idees kry", "Dit maak seker net een persoon werk", "Dit maak konflik altyd erger", "Leerders deel idees, help mekaar en verbeter kommunikasie"],
+    answer: 3,
+    fact: "Groepwerk help met kommunikasie, nuwe idees, samewerking en om mekaar op te bou."
+  },
+  {
+    question: "Watter reg en verantwoordelikheid pas die beste by mekaar?",
+    options: ["Reg op gesondheid: hou jou liggaam gesond", "Reg op skuiling: mors kos", "Reg op opvoeding: spot ander kinders", "Reg op nasionaliteit: gooi boeke weg"],
     answer: 0,
-    fact: "Groepwerk help met kommunikasie, idees en samewerking."
+    fact: "Elke reg het 'n verantwoordelikheid. By gesondheid moet jy jou liggaam gesond hou."
+  },
+  {
+    question: "Watter voorbeeld wys respek wanneer daar konflik in 'n groep is?",
+    options: ["Praat harder as almal", "Luister eers en verduidelik kalm jou idee", "Los die werk en stap weg vir altyd", "Se die ander persoon se idee is dom"],
+    answer: 1,
+    fact: "Respek beteken jy luister, praat kalm en probeer die probleem reg oplos."
   }
 ];
 
