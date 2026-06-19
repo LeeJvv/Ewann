@@ -73,6 +73,7 @@
         <button class="tab" data-view="quiz">Vasvra</button>
         <button class="tab" data-view="practice">Vraestel-oefen</button>
         <button class="tab" data-view="timeline">Volgorde</button>
+        <button class="tab" data-view="scan">Scan Werk</button>
         <button class="tab" data-view="words">Woordelys</button>
       </nav>
 
@@ -147,8 +148,56 @@
         </div>
         <div id="wordList" class="word-list"></div>
       </section>
+
+      <section id="scan" class="view" aria-labelledby="scanTitle">
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">Weeklikse werk</span>
+            <h2 id="scanTitle">Neem 'n foto en stoor dit vir eksamen-prep</h2>
+          </div>
+          <div class="card-actions">
+            <button id="exportScans" class="secondary-button" type="button">Export scans</button>
+          </div>
+        </div>
+        <div class="scan-workspace">
+          <form id="scanForm" class="scan-form">
+            <label>
+              <span>Week of datum</span>
+              <input id="scanWeek" type="text" placeholder="bv. Week 3">
+            </label>
+            <label>
+              <span>Kort titel</span>
+              <input id="scanTitleInput" type="text" placeholder="bv. Kaartsimbole">
+            </label>
+            <label class="scan-file">
+              <span>Foto van werk</span>
+              <input id="scanPhoto" type="file" accept="image/*" capture="environment">
+            </label>
+            <label>
+              <span>Notas vir Mamma</span>
+              <textarea id="scanNotes" rows="3" placeholder="bv. Hierdie blad moet nog geoefen word."></textarea>
+            </label>
+            <div class="card-actions">
+              <button class="primary-button" type="submit">Stoor foto</button>
+              <button id="clearScanForm" class="secondary-button" type="button">Maak skoon</button>
+            </div>
+            <p id="scanStatus" class="feedback" aria-live="polite"></p>
+          </form>
+          <section class="scan-library" aria-label="Gestoor werk">
+            <div class="scan-library-header">
+              <h3>Gestoor Geografie werk</h3>
+              <span id="scanCount">0 fotos gestoor</span>
+            </div>
+            <div id="scanList" class="scan-list"></div>
+          </section>
+        </div>
+      </section>
     </main>
 
+    <script>
+      window.scanWorkConfig = { subject: "Geografie", storageKey: "ewannGeografieScans" };
+    </script>
     <script src="app.js"></script>
+    <script src="../scan-work.js"></script>
   </body>
 </html>

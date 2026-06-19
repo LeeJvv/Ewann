@@ -14,6 +14,13 @@ Aparte vaklinks:
 
 Elke vak het sy eie mini-app, eie vordering en eie inhoud.
 
+Fase 1 weeklikse scans:
+
+- Elke vak het nou 'n `Scan Werk` tab.
+- Ewann kan 'n foto neem of kies, 'n week/titel/notas byvoeg, en dit op die iPad stoor.
+- Die fotos word lokaal in die browser se IndexedDB gestoor per vak.
+- Die `Export scans` knoppie maak 'n JSON-leer wat later vir eksamen-prep gebruik kan word.
+
 Huidige Geografie-inhoud:
 
 - Syaansigte en planaansigte
