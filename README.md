@@ -21,6 +21,13 @@ Fase 1 weeklikse scans:
 - Die fotos word lokaal in die browser se IndexedDB gestoor per vak.
 - Die `Export scans` knoppie maak 'n JSON-leer wat later vir eksamen-prep gebruik kan word.
 
+Fase 2 AI verwerking:
+
+- Elke gestoor scan het nou 'n `Maak AI leerwerk` knoppie.
+- Vul een keer die veilige backend URL in by `AI backend URL`.
+- Die backend-template is in `phase2-backend/` en hou die OpenAI key buite die iPad app.
+- Die AI resultaat word by die scan gestoor en saam met `Export scans` uitgevoer.
+
 Huidige Geografie-inhoud:
 
 - Syaansigte en planaansigte

@@ -179,8 +179,13 @@
               <span>Notas vir Mamma</span>
               <textarea id="scanNotes" rows="3" placeholder="bv. Hierdie blad moet nog geoefen word."></textarea>
             </label>
+            <label>
+              <span>AI backend URL</span>
+              <input id="scanApiUrl" type="url" placeholder="bv. https://ewann-ai.example.com">
+            </label>
             <div class="card-actions">
               <button class="primary-button" type="submit">Stoor foto</button>
+              <button id="saveScanApiUrl" class="secondary-button" type="button">Stoor AI URL</button>
               <button id="clearScanForm" class="secondary-button" type="button">Maak skoon</button>
             </div>
             <p id="scanStatus" class="feedback" aria-live="polite"></p>

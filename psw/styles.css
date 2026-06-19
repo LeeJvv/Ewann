@@ -618,6 +618,46 @@ main {
   color: var(--blue);
 }
 
+.scan-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.scan-study-pack {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 12px;
+}
+
+.scan-study-pack h4,
+.scan-study-pack h5 {
+  margin: 0;
+  color: var(--blue);
+}
+
+.scan-generated {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.scan-generated section {
+  display: grid;
+  gap: 6px;
+}
+
+.scan-generated ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.45;
+  font-weight: 700;
+}
+
 @media (max-width: 760px) {
   .app-header {
     grid-template-columns: 1fr;
